@@ -5,7 +5,7 @@
 a = 100
 A = 'hello'
 
-import keyword
+# import keyword
 # print(keyword.kwlist)
 
 # 資料型態
