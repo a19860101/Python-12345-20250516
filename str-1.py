@@ -47,6 +47,16 @@ print(q.endswith('a'))
 print(q.startswith('s'))
 
 # split() 字串轉列表
+# print(q.split())
+# print(q.split('w'))
+
 # strip() 去除前後空白
+q3 = ' asdf asdf '
+print(q3)
+print(q3.strip())
+
 # lstrip() 去除開頭空白
+print(q3.lstrip())
+
 # rstrip() 去除結尾空白
+print(q3.rstrip())
