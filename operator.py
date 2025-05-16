@@ -7,6 +7,8 @@ print(x - 2)
 print(x * 2)
 print(x / 2)
 print(x % 3) #求餘數
+print(x ** 10)
+print(x // 3)
 
 # 比較運算元
 print(x > 0)
@@ -26,3 +28,5 @@ x /= 2
 print(x) # 10
 x %= 2
 print(x) # 0
+x **= 2
+x //= 2
