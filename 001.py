@@ -30,3 +30,13 @@ print(type(d4))
 # NoneType 無類型
 d6 = None
 print(type(d6))
+
+x = '10'
+y = '7'
+print(int(x) + int(y))
+print(float(x) + float(y))
+print(int(x) + float(y))
+
+q = 10
+w = 7
+print(str(q) + str(w))
