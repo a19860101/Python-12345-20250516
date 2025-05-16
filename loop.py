@@ -2,7 +2,7 @@
 
 # for
 for i in range(10):
-    print('hello',i)
+    print('hello')
 
 # for i in range(5,15):
 #     print(i)
