@@ -10,12 +10,14 @@ inp = int(inp)
 
 while inp != ans:
     if inp > ans:
+        b = inp
         print('數字太大')
-        print(f'{inp}以下')
+        print(f'{a}以上{b}以下')
         inp = int(input('請輸入數字:'))
     else:
+        a = inp
         print('數字太小')
-        print(f'{inp}以上')
+        print(f'{a}以上{b}以下')
         inp = int(input('請輸入數字:'))
 
 print('Bingo!!!')
