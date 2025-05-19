@@ -8,11 +8,27 @@ print(ans)
 inp = input('請輸入數字:')
 inp = int(inp)
 
-if inp > ans:
-    print('數字太大')
+while inp != ans:
+    if inp > ans:
+        print('數字太大')
+        print(f'{inp}以下')
+        inp = int(input('請輸入數字:'))
+    else:
+        print('數字太小')
+        print(f'{inp}以上')
+        inp = int(input('請輸入數字:'))
 
-if inp < ans:
-    print('數字太小')
+print('Bingo!!!')
 
-if inp == ans:
-    print('猜對')
+
+
+
+
+# if inp > ans:
+#     print('數字太大')
+#
+# if inp < ans:
+#     print('數字太小')
+#
+# if inp == ans:
+#     print('猜對')
