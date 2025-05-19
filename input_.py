@@ -11,6 +11,8 @@ result = int(x) / rate
 result = round(result, 2)
 # result = round(int(x) / rate,2)
 
+# round() 四捨五入
+
 # result = int(x) // rate
 
 print(f'{x}元台幣約等於{result}美金')
