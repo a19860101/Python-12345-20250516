@@ -3,7 +3,7 @@
 # a = list()
 # a = []
 
-a = ['Apple', 123, 3.12,True , True, True, False, 999]
+a = ['Apple', 123, 3.12,True ,False, 999]
 # print(a)
 # print(a[0])
 # print(a[1])
@@ -29,4 +29,21 @@ print(a)
 # extend()
 a.extend(['hello','Python'])
 print(a)
+
+# insert()
+a.insert(3,'qqq')
+print(a)
+
+# remove()
+a.remove('qqq')
+print(a)
+
+# pop()
+a.pop(1)
+print(a)
+
+# clear()
+a.clear()
+print(a)
+
 
