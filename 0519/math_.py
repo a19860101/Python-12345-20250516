@@ -13,6 +13,11 @@ r = math.floor(3.4)
 # 無條件進位
 r2 = math.ceil(3.4)
 
-print(math.pi)
+# print(math.pi)
 
-print(round(math.pi,2))
+# print(round(math.pi,2))
+
+import random
+
+# print(random.random())
+print(random.randint(1,10))
