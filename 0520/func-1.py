@@ -5,6 +5,15 @@ def foo2(x):
     r = x * 1.1
     return r
 
-a = foo2(100)
+def area(w,h):
+    return w * h
 
-print(a)
+def twToUs(dollar, rate=31.2):
+    result = round(dollar / rate , 2)
+    return result
+
+d1 = twToUs(100000)
+print(d1)
+
+d2 = twToUs(100000, 30.8)
+print(d2)
