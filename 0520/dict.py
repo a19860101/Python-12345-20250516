@@ -29,11 +29,31 @@ users = {
 # print(list(users.values()))
 # print(list(users.items()))
 
-for k in users.keys():
-    print(k)
+# for k in users.keys():
+#     print(k)
+#
+# for v  in users.values():
+#     print(v)
 
-for v  in users.values():
-    print(v)
+# for k,v in users.items():
+#     print(f'{k}:{v}')
 
-for k,v in users.items():
-    print(f'{k}:{v}')
+datas = [
+    {
+        'name': 'John',
+        'email': 'asdf@gmail.com',
+        'phone': '0987654321',
+        'skill': ['photoshop','illustrator']
+    },
+    {
+        'name': 'Mary',
+        'email': 'ewgwegwegweg@gmail.com',
+        'phone': '09122424242',
+        'skill': ['Python']
+    }
+]
+# print(datas[1])
+for data in datas:
+    # print(data['name'])
+    # print(data['email'])
+    print(data)
