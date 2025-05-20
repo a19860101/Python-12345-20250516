@@ -9,7 +9,6 @@ users = {
     'name': 'John',
     'email': 'asdf@gmail.com',
     'phone': '0987654321',
-    'age': '30'
 }
 
 # print(users)
@@ -24,6 +23,17 @@ users = {
 # users.setdefault('age','20')
 
 # del users['email']
-users.pop('age')
+# users.pop('age')
 
-print(users)
+# print(list(users.keys()))
+# print(list(users.values()))
+# print(list(users.items()))
+
+for k in users.keys():
+    print(k)
+
+for v  in users.values():
+    print(v)
+
+for k,v in users.items():
+    print(f'{k}:{v}')
