@@ -8,6 +8,9 @@ def foo2(x):
 def area(w,h):
     return w * h
 
+a1 = area(h=14, w=14)
+print(a1)
+
 def twToUs(dollar, rate=31.2):
     result = round(dollar / rate , 2)
     return result
@@ -28,3 +31,11 @@ def circleArea(r):
 
 c1 = circleArea(18)
 print(c1)
+
+def cir(r):
+    result = math.pi * r * 2
+    result = round(result, 1)
+    return result
+
+c2 = cir(12)
+print(c2)
