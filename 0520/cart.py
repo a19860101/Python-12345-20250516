@@ -21,4 +21,13 @@ while True:
     elif selected in products:
         cart.append(selected)
 
-print(cart)
+print('----------------------------------')
+print('訂單項目')
+for p in cart:
+    print(p)
+
+    # total = total + products[p]
+    total += products[p]
+
+print('----------------------------------')
+print(f'總金額為:{total}元')
