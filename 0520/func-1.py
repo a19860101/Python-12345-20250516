@@ -39,3 +39,15 @@ def cir(r):
 
 c2 = cir(12)
 print(c2)
+
+# for i in range(10,0,-1):
+#     print(i)
+
+import time
+def count(start, end):
+    for i in range(end, start, -1):
+        print(i)
+        time.sleep(1)
+    print('倒數結束!')
+
+count(0,5)
