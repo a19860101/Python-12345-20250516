@@ -53,7 +53,13 @@ datas = [
     }
 ]
 # print(datas[1])
-for data in datas:
+# for data in datas:
     # print(data['name'])
     # print(data['email'])
-    print(data)
+    # print(data)
+
+for data in datas:
+    for k,v in data.items():
+        print(f'{k}:{v}')
+    print('=================================')
+
