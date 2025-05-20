@@ -3,6 +3,7 @@ import random
 area1 = random.sample(range(1,39),6)
 area2 = random.sample(range(1,9),1)
 
+# 串列轉字串 list to string
 area1 = ','.join(str(a1) for a1 in area1)
 
 print(area1,area2)
