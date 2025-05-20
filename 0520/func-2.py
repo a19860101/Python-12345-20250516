@@ -28,3 +28,12 @@ def foo5(*args, **kwargs):
 
 r = foo5(1,2,3,name='john')
 print(r)
+
+
+# lambda
+
+f = lambda x : x ** 2
+f2 = lambda x,y : (x+y)*1.24
+
+print(f(12))
+print(f2(12,24))
