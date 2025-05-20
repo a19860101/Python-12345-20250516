@@ -12,8 +12,19 @@ def twToUs(dollar, rate=31.2):
     result = round(dollar / rate , 2)
     return result
 
-d1 = twToUs(100000)
-print(d1)
+# d1 = twToUs(100000)
+# print(d1)
+#
+# d2 = twToUs(100000, 30.8)
+# print(d2)
 
-d2 = twToUs(100000, 30.8)
-print(d2)
+# 圓面積 pir^2
+
+import math
+def circleArea(r):
+    result = math.pi * (r ** 2)
+    result = round(result, 1)
+    return result
+
+c1 = circleArea(18)
+print(c1)
