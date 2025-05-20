@@ -44,10 +44,12 @@ print(c2)
 #     print(i)
 
 import time
-def count(start, end):
+def count(end, start=0):
     for i in range(end, start, -1):
         print(i)
         time.sleep(1)
     print('倒數結束!')
 
-count(0,5)
+s = input('請輸入秒數:')
+print('開始倒數:')
+count(int(s))
