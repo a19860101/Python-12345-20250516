@@ -5,22 +5,23 @@ from PIL import Image
 
 images = glob.glob('../images/*.[Jj][Pp][Gg]')
 
-image = Image.open(images[0])
+for idx, image in enumerate(images):
+    img = Image.open(image)
 
-# print(image.size)
-# print(image.size[0])
-# print(image.size[1])
+    # print(image.size)
+    # print(image.size[0])
+    # print(image.size[1])
 
-w = image.size[0]
-h = image.size[1]
+    w = img.size[0]
+    h = img.size[1]
 
-resize_w = 1200
-resize_h = int(h * resize_w / w)
+    resize_w = int(input('請輸入縮圖寬度:'))
+    resize_h = int(h * resize_w / w)
 
-print(resize_h)
+    print(resize_h)
 
-small_image = image.resize((resize_w,resize_h))
+    small_image = img.resize((resize_w,resize_h))
 
-os.makedirs('images',exist_ok=True)
+    os.makedirs('small',exist_ok=True)
 
-small_image.save('images/small.jpg',quality=60, subsampling=0)
+    small_image.save(f'small/small-{idx + 1}.jpg',quality=60, subsampling=1)
