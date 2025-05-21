@@ -3,7 +3,9 @@ import os
 import glob
 from PIL import Image
 
-images = glob.glob('../images/*.[Jj][Pp][Gg]')
+images = glob.glob('./images/*.[Jj][Pp][Gg]')
+resize_w = int(input('請輸入縮圖寬度:'))
+qu = int(input('請輸入品質(0-100):'))
 
 for idx, image in enumerate(images):
     img = Image.open(image)
@@ -15,7 +17,6 @@ for idx, image in enumerate(images):
     w = img.size[0]
     h = img.size[1]
 
-    resize_w = int(input('請輸入縮圖寬度:'))
     resize_h = int(h * resize_w / w)
 
     print(resize_h)
@@ -24,4 +25,4 @@ for idx, image in enumerate(images):
 
     os.makedirs('small',exist_ok=True)
 
-    small_image.save(f'small/small-{idx + 1}.jpg',quality=60, subsampling=1)
+    small_image.save(f'small/small-{idx + 1}.jpg',quality=qu, subsampling=1)
