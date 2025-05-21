@@ -4,6 +4,8 @@ import glob
 from PIL import Image
 
 images = glob.glob('./images/*.[Jj][Pp][Gg]')
+# 打包的路徑
+# images = glob.glob('./images/*.[Jj][Pp][Gg]')
 resize_w = int(input('請輸入縮圖寬度:'))
 qu = int(input('請輸入品質(0-100):'))
 
