@@ -14,6 +14,5 @@
 
 import glob
 
-r = glob.glob('../*')
-
+r = glob.glob('../0520/????-[0-9].py')
 print(r)
