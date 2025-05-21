@@ -18,7 +18,7 @@ color = ImageEnhance.Color(image)
 image = brightness.enhance(1.6)
 image = contrast.enhance(0.6)
 
-image.show()
+image.show('heelo')
 
 
 
