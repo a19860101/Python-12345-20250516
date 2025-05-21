@@ -1,11 +1,19 @@
+#引入 time模組
 # import time
 #
 # time.sleep(2)
 #
 # print('hello')
 
-from time import sleep
+#引入 time模組中的sleep
+# from time import sleep
+#
+# sleep(2)
+#
+# print('hello')
 
-sleep(2)
+import glob
 
-print('hello')
+r = glob.glob('../*')
+
+print(r)
