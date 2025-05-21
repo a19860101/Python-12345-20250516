@@ -1,3 +1,4 @@
+from collections import Counter
 products = {
     'apple': 100,
     'banana' : 120,
@@ -23,9 +24,11 @@ while True:
 
 print('----------------------------------')
 print('訂單項目')
+a = Counter(cart)
+for k,v in a.items():
+    print(f'{k:8}:{v:5}個 {products[k]}*{v} = {products[k]*v}')
 for p in cart:
-    print(p)
-
+    # print(p)
     # total = total + products[p]
     total += products[p]
 
