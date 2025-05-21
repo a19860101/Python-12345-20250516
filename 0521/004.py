@@ -7,13 +7,16 @@ images = glob.glob('./images/*.[Jj][Pp][Gg]')
 
 image = Image.open(images[0])
 
+# 亮度
 brightness = ImageEnhance.Brightness(image)
+# 對比
 contrast = ImageEnhance.Contrast(image)
+# 飽和度
 color = ImageEnhance.Color(image)
 
+# image = color.enhance(0)
 image = brightness.enhance(1.6)
-image = contrast.enhance(3)
-image = color.enhance(0.5)
+image = contrast.enhance(0.6)
 
 image.show()
 
