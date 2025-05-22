@@ -12,4 +12,9 @@ draw.text((0,0),'HELLO', font=font, fill=(255,255,255,100))
 
 result = Image.alpha_composite(img, text)
 
-result.show()
+# result.save('result.png')
+
+result.convert('RGB').save('result.jpg')
+
+# result = result.convert('RGB')
+# result.save('result.jpg')
