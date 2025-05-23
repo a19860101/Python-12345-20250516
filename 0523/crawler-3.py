@@ -11,8 +11,18 @@ header = {
 
 request = req.Request(url, headers=header)
 
-res = req.urlopen(request)
+# res = req.urlopen(request)
+#
+# result = res.read().decode('utf-8')
+#
+# res.close()
 
-result = res.read().decode('utf-8')
+with req.urlopen(request) as res:
+    result = res.read().decode('utf-8')
 
-print(result)
+# print(result)
+
+if res.closed:
+    print('closed')
+else:
+    print('not close')
