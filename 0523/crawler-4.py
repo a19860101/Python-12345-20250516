@@ -23,7 +23,11 @@ source = bs4.BeautifulSoup(result, 'html.parser')
 s = source.find('a',class_='board')
 logo = source.find('a', id='logo')
 
-print(s)
-print(s.string)
-print(s.text)
+# print(s)
+# print(s.string)
+# print(s.text)
+titles = source.find_all('div', class_='title')
 
+for title in titles:
+    print(title.text)
+    # print(title.a.string)
