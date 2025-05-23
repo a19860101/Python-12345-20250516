@@ -23,5 +23,7 @@ source = bs4.BeautifulSoup(result, 'html.parser')
 s = source.find('a',class_='board')
 logo = source.find('a', id='logo')
 
-print(logo.string)
+print(s)
+print(s.string)
+print(s.text)
 
