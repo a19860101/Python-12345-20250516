@@ -4,7 +4,7 @@ img = Image.open('./images/IMG_8439.JPEG')
 
 date_offset = 15
 font_size = 40
-color = 'orange'
+color = 'red'
 
 exif = img._getexif()
 date = exif[36867]
