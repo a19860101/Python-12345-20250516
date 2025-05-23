@@ -4,4 +4,8 @@ url = 'https://exiv2.org/tags.html'
 
 request = req.Request(url)
 
-print(request)
+res = req.urlopen(request)
+
+result = res.read().decode('utf-8')
+
+print(result)
