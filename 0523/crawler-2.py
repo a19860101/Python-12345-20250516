@@ -1,3 +1,5 @@
+# 使用User-Agent
+
 import urllib.request as req
 
 url = 'https://www.ptt.cc/bbs/NBA/index.html'

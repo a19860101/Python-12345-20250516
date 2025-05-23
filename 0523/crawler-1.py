@@ -1,3 +1,4 @@
+# 基礎爬蟲
 import urllib.request as req
 
 url = 'https://exiv2.org/tags.html'
