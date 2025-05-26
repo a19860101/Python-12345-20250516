@@ -21,5 +21,8 @@ json_datas = json.loads(result)
 os.makedirs('images', exist_ok=True)
 
 for idx, data in enumerate(json_datas['data']['data']):
-    print(data['img_url_list'][0])
-    req.urlretrieve(data['img_url_list'][0], f'images/img-{idx+1}.jpg')
+    # print(data['img_url_list'][0])
+    # req.urlretrieve(data['img_url_list'][0], f'images/img-{idx+1}.jpg')
+    for i, img in enumerate(data['img_url_list']):
+        os.makedirs(f'images/{i+1}', exist_ok=True)
+        req.urlretrieve(img, f'images/{i+1}/img-{idx+1}-{i+1}.jpg')
