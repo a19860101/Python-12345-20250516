@@ -21,4 +21,10 @@ with req.urlopen(request) as res:
 
 json_datas = json.loads(result)
 
-print(json_datas)
+# print(json_datas)
+# print(json_datas['data'])
+# print(json_datas['data']['data'])
+
+for data in json_datas['data']['data']:
+    print(f'{data['name']} \n 原價{data['official_price']} \\ 最高價格{data['max_price']} \\ 最低價格{data['min_price']}')
+    print('----------------------------------------')
