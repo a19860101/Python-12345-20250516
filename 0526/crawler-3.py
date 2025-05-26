@@ -26,7 +26,7 @@ for i in range(5):
 
     with open('output/kkday2.txt','a',encoding='utf-8') as f:
         for idx,data in enumerate(json_datas['data']['data']):
-            print(f'{data['name']} \n 原價{data['official_price']} \\ 最高價格{data['max_price']} \\ 最低價格{data['min_price']}')
+            print(f'{i * 10 + (idx + 1)}.{data['name']} \n 原價{data['official_price']} \\ 最高價格{data['max_price']} \\ 最低價格{data['min_price']}')
             print('----------------------------------------')
-            ct = f'\n {data['name']} \n 原價{data['official_price']} \n 最高價格{data['max_price']} \\ 最低價格{data['min_price']} \n ---------------------------------------- \n'
+            ct = f'{i * 10 + (idx + 1)}. {data['name']} \n 原價{data['official_price']} \n 最高價格{data['max_price']} \\ 最低價格{data['min_price']} \n ---------------------------------------- \n'
             f.write(ct)
