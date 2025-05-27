@@ -27,5 +27,3 @@ for data in datas:
 
         with open('ptt.txt','a',encoding='utf-8') as f:
             f.write(f'{nrec}-{title}-{author}-{date} \n')
-
-
