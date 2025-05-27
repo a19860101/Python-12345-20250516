@@ -18,5 +18,6 @@ for idx,img in enumerate(imgs):
         os.makedirs('tenlong', exist_ok=True)
         with open(f'tenlong/{idx}.jpg', 'wb')as f:
             f.write(img_src.content)
-    except:
+    except Exception as e:
+        print(e)
         pass
