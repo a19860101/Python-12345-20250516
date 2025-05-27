@@ -1,9 +1,8 @@
 # requests模組
-
+import bs4
 import requests
 
-# url = 'https://www.ptt.cc/bbs/NBA/index.html'
-url = 'https://www.kkday.com/zh-tw/category/ajax_get_category_product_list?productCategory=CATEGORY_019&destination=D-JP-3231&keyword=&currency=TWD&sort=prec&page=1&start=0&count=10'
+url = 'https://www.ptt.cc/bbs/NBA/index.html'
 
 header = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36',
@@ -11,8 +10,12 @@ header = {
 
 res = requests.get(url, headers=header, verify=False)
 
-print(res.json())
-json_datas = res.json()
+result = res.text
 
-for data in json_datas['data']['data']:
-    print(data['name'])
+source = bs4.BeautifulSoup(result, 'html.parser')
+
+datas = source.find_all('div', class_='r-ent')
+
+for data in datas:
+    print(data.a.string)
+
