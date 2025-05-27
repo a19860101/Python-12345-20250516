@@ -17,9 +17,15 @@ source = bs4.BeautifulSoup(result, 'html.parser')
 datas = source.find_all('div', class_='r-ent')
 
 for data in datas:
-    # print(data)
-    title = data.a.string
-    author = data.find('div', class_='author').string
-    date = data.find('div', class_='date').string
-    nrec = data.span.string
+    if data.a and data.span is not None:
+        title = data.a.string
+        author = data.find('div', class_='author').string
+        date = data.find('div', class_='date').string
+        nrec = data.span.string
+
+        print(f'{nrec}-{title}-{author}-{date}')
+
+        with open('ptt.txt','a',encoding='utf-8') as f:
+            f.write(f'{nrec}-{title}-{author}-{date} \n')
+
 
