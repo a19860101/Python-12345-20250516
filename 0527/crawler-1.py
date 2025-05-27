@@ -17,5 +17,9 @@ source = bs4.BeautifulSoup(result, 'html.parser')
 datas = source.find_all('div', class_='r-ent')
 
 for data in datas:
-    print(data.a.string)
+    # print(data)
+    title = data.a.string
+    author = data.find('div', class_='author').string
+    date = data.find('div', class_='date').string
+    nrec = data.span.string
 
