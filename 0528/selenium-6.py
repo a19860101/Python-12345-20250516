@@ -17,12 +17,26 @@ link1 = driver.find_element(By.LINK_TEXT, '男款')
 link1.click()
 time.sleep(3)
 
-link2 = driver.find_element(By.XPATH, '//*[@id="eb498498-e1e0-4ad6-b689-ab3374ff3bca"]/div/div/nav/div[1]/ul/li[1]/a')
+# link2 = driver.find_element(By.XPATH, '//*[@id="eb498498-e1e0-4ad6-b689-ab3374ff3bca"]/div/div/nav/div[1]/ul/li[1]/a')
+link2 = driver.find_element(By.LINK_TEXT, '運動裝備')
 link2.click()
-time.sleep(5)
+time.sleep(2)
 
-driver.execute_script('alert("hello")')
-time.sleep(5)
+# for i in range(5):
+#     driver.execute_script('window.scrollTo(0, document.body.scrollHeight - 1500)')
+#     time.sleep(2)
+
+p_count = 0
+# for i in range(2):
+while True:
+    driver.execute_script('window.scrollTo(0, document.body.scrollHeight - 1500)')
+    time.sleep(2)
+    products = driver.find_elements(By.CLASS_NAME, 'product-card__info')
+    print(len(products))
+    if p_count == len(products):
+        break
+    p_count = len(products)
+
 infos = driver.find_elements(By.CLASS_NAME, 'product-card__info')
 
 print(len(infos))
