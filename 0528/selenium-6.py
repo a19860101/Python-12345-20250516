@@ -21,7 +21,8 @@ link2 = driver.find_element(By.XPATH, '//*[@id="eb498498-e1e0-4ad6-b689-ab3374ff
 link2.click()
 time.sleep(5)
 
-
+driver.execute_script('alert("hello")')
+time.sleep(5)
 infos = driver.find_elements(By.CLASS_NAME, 'product-card__info')
 
 print(len(infos))
