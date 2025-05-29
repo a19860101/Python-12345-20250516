@@ -19,4 +19,10 @@ search.click()
 
 time.sleep(5)
 
+ck = driver.find_element(By.ID, 'onetrust-accept-btn-handler')
+
+ck.click()
+
+time.sleep(3)
+
 driver.close()
