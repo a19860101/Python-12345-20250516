@@ -1,6 +1,7 @@
 import time
 
 from selenium import webdriver
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.wait import WebDriverWait
@@ -36,6 +37,20 @@ WebDriverWait(driver, 10).until(
 )
 
 time.sleep(2)
+
+p_count = 0
+while True:
+    driver.execute_script('window.scrollTo(0, document.body.scrollHeight)')
+    try:
+        WebDriverWait(driver, 10).until_not(
+            EC.presence_of_element_located((By.CLASS_NAME, 'loading-paging'))
+        )
+    except TimeoutException as e:
+        print(e)
+    products=driver.find_elements(By.CLASS_NAME, 'product-li')
+    if p_count == len(products):
+        break
+    p_count = len(products)
 
 products = driver.find_elements(By.CLASS_NAME, 'product-li')
 
