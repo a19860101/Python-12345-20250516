@@ -58,18 +58,17 @@ while True:
 
 products = driver.find_elements(By.CLASS_NAME, 'product-li')
 
-# wb = openpyxl.Workbook()
-# ws = wb.active
-# ws.title = '女裝'
+wb = openpyxl.Workbook()
+ws = wb.active
+ws.title = '女裝'
 
-# ws.append(['商品名稱','代碼','價格','圖片連結'])
+ws.append(['商品名稱','代碼','價格','連結'])
 
 for product in products:
     title = product.find_element(By.CLASS_NAME, 'ec-font-sub-title').text
     price = product.find_element(By.CLASS_NAME, 'h-currency').text
-    img = product.find_element(By.CLASS_NAME, 'picture-img')
-    im = img.get_property('src')
-    # print(f'{title}:{price}')
-    # ws.append([title[:-6],title[-6:],price,im])
-# wb.save('u.xlsx')
+    link = product.find_element(By.TAG_NAME, 'a').get_property('href')
+    print(f'{link}')
+    ws.append([title,title[-6:],price,link])
+wb.save('u.xlsx')
 driver.close()
