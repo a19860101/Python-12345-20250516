@@ -3,7 +3,8 @@ import time
 import openpyxl
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.wait import WebDriverWait
+# from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 driver = webdriver.Chrome()
@@ -21,8 +22,11 @@ while True:
     # time.sleep(2)
     # loader-bar
     try:
-        WebDriverWait(driver, 10).until_not(
-            EC.presence_of_element_located((By.CLASS_NAME, 'loader-bar'))
+        # WebDriverWait(driver, 10).until_not(
+        #     EC.presence_of_element_located((By.CLASS_NAME, 'loader-bar'))
+        # )
+        WebDriverWait(driver, 10).until(
+            EC.invisibility_of_element_located((By.CLASS_NAME, 'loader-bar'))
         )
     except Exception as e:
         print(e)
