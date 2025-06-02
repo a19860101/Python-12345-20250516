@@ -25,3 +25,9 @@ condition = users['age'] >= 30
 print(users[condition])
 print(users[users['age'] < 30])
 print(users[users['gender']=='M'])
+
+print(users['name'].str.contains('A'))
+
+print(users[users['name'].str.contains('A')])
+a = users['name'].str.contains('a')
+print(users[a])
