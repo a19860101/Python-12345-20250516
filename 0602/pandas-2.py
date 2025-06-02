@@ -19,3 +19,9 @@ print(users['age'].mean())
 print(users['age'].std())
 # 中位數
 print(users['age'].median())
+
+
+condition = users['age'] >= 30
+print(users[condition])
+print(users[users['age'] < 30])
+print(users[users['gender']=='M'])
