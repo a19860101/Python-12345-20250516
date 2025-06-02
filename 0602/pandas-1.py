@@ -42,7 +42,13 @@ data5 = pd.DataFrame([
 ], index=['A','B','C','D'])
 
 print(data5)
-print(data5.size)
-print(data5.columns)
-print(data5.index)
-print(data5.shape)
+# print(data5.size)
+# print(data5.columns)
+# print(data5.index)
+# print(data5.shape)
+
+print(data5['名稱'])
+print(data5['庫存'])
+
+print(data5.loc['C'])
+print(data5.iloc[1])
