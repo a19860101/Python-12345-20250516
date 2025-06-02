@@ -9,8 +9,13 @@ users = pd.DataFrame([
 ])
 
 print(users['age'])
+# 最小值
 print(users['age'].min())
+# 最大值
 print(users['age'].max())
+# 平均數
 print(users['age'].mean())
+# 標準差
 print(users['age'].std())
+# 中位數
 print(users['age'].median())
