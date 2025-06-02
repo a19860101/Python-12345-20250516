@@ -6,6 +6,27 @@ data = pd.Series([12,35,26,43,71])
 print(data)
 
 # 二維資料
-data2 = pd.DataFrame([12,35,26,43,71])
+# data2 = pd.DataFrame([12,35,26,43,71])
 
-print(data2)
+data3 = pd.DataFrame([
+    [1,2,3,4,5],
+    ['A','B','C','D','E']
+])
+
+data4 = pd.DataFrame([
+    ['商品一','199'],
+    ['商品二', '299']
+])
+
+data5 = pd.DataFrame([
+    {
+        '名稱':'商品一',
+        '價格': '299'
+    },
+    {
+        '名稱':'商品二',
+        '價格':'499'
+    }
+])
+
+print(data5)
