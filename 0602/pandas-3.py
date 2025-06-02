@@ -9,8 +9,10 @@ print(datas.columns)
 condition = datas['Add'].str.contains('中壢')
 result = datas[condition]
 
+# 保留需要的欄位
 # result = result[['Name', 'Add']]
 
+# 移除不要的欄位
 result = result.drop(['Id', 'Description'], axis=1)
 
 result.to_excel('a.xlsx')
