@@ -49,7 +49,39 @@ plt.plot(dataX,dataY,
 
 plt.show()
 ```
+### 設定文字
+預設的圖表中無法顯示中文，需要手動設定中文字體
+```python
+import matplotlib.pyplot as plt
 
+# 設定中文字體
+# 微軟正黑體
+plt.rc('font', family='Microsoft Jhenghei')
+# 新細明體
+# plt.rc('font',family='MingLiu')
+
+# mac可使用以下字體
+# plt.rc('font', family='LiHei Pro')
+
+dataX = [1, 3, 5, 7, 9]
+dataY = [20, 24, 32, 18, 26]
+plt.plot(dataX,dataY,
+         color='red',
+         linewidth=1.5,
+         linestyle='-',
+         marker=".",
+         markersize=15,
+         label='六月')
+
+plt.title('Python圖表')
+plt.xlabel('日期')
+plt.ylabel('溫度')
+
+# 屬性中若有設定label，需要加上legend()顯示
+plt.legend()
+
+plt.show()
+```
 
 ### 設定樣式
 * linewidth or lw
