@@ -25,6 +25,10 @@ plt.ylim(0,50)
 plt.title('天氣預報')
 plt.ylabel('溫度(攝氏)')
 
-# plt.xticks(x)
+plt.xticks(
+    rotation=45,
+    fontsize=8,
+    color='red'
+)
 
 plt.show()
