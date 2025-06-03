@@ -11,13 +11,15 @@ plt.plot(dataX,dataY,
          linewidth=1.5,
          linestyle='-',
          marker=".",
-         markersize=15)
+         markersize=15,
+         label='六月')
 
 # plt.plot([20, 24, 32, 18, 26])
 
 plt.title('Python圖表')
 plt.xlabel('日期')
 plt.ylabel('溫度')
-
+#圖例顯示
+plt.legend()
 
 plt.show()
