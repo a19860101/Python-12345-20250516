@@ -14,15 +14,22 @@ min_ = list(data['最低價'][:20])
 open_ = [ float(i.replace(',','')) for i in open_]
 max_ = [ float(i.replace(',','')) for i in max_]
 
+date = list(data['日期'][:20])
+x = [d[-2:] for d in date]
+print(x)
+
 plt.rc('font', family='Microsoft Jhenghei')
 
-plt.plot(close_, marker='.', markersize=8, linewidth=1, label='收盤價')
-plt.plot(open_,marker='.', markersize=8, linewidth=1,label='開盤價')
-plt.plot(max_,marker='.', markersize=8, linewidth=1,label='最高價')
-plt.plot(min_,marker='.', markersize=8, linewidth=1,label='最低價')
+plt.plot(x,close_, marker='.', markersize=8, linewidth=1, label='收盤價')
+plt.plot(x,open_,marker='.', markersize=8, linewidth=1,label='開盤價')
+plt.plot(x,max_,marker='.', markersize=8, linewidth=1,label='最高價')
+plt.plot(x,min_,marker='.', markersize=8, linewidth=1,label='最低價')
 
 plt.ylim(900,1100)
 
+plt.xlabel('日期')
+plt.ylabel('股價')
+plt.title('台積電(2330)114年5月')
 plt.legend()
 
 plt.show()
