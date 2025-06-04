@@ -13,4 +13,6 @@ plt.pie(data,
         autopct='%.2f%%'
         )
 
+plt.legend()
+
 plt.show()
