@@ -15,7 +15,7 @@ open_ = [ float(i.replace(',','')) for i in open_]
 max_ = [ float(i.replace(',','')) for i in max_]
 
 date = list(data['日期'][:20])
-x = [d[-2:] for d in date]
+x = [f'{d[-2:]}日' for d in date]
 print(x)
 
 plt.rc('font', family='Microsoft Jhenghei')
@@ -29,6 +29,8 @@ plt.ylim(900,1100)
 
 plt.xlabel('日期')
 plt.ylabel('股價')
+plt.xticks(rotation=45)
+
 plt.title('台積電(2330)114年5月')
 plt.legend()
 
