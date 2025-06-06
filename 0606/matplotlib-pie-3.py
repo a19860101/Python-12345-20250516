@@ -17,4 +17,15 @@ dog_n = len(dog)
 cat_n = len(cat)
 other_n = total - dog_n - cat_n
 
-print(other_n)
+plt.rc('font', family='Microsoft Jhenghei')
+
+plt.pie([dog_n,cat_n,other_n],
+        autopct='%.1f%%',
+        labels=['狗','貓','其他'],
+        explode=[.1,.1,.2],
+        startangle=15
+        )
+
+plt.legend()
+
+plt.show()
