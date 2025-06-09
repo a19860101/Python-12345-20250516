@@ -17,10 +17,19 @@ t = dog['animal_Variety'].nunique()
 print(t)
 
 # 計算個別元素數量
-dog_variety = dog['animal_Variety'].value_counts()
+# dog_variety = dog['animal_Variety'].value_counts()
+# dog_variety = dog['animal_Variety'].value_counts(dropna=False)
+# dropna 移除nan
+dog_variety = dog['animal_Variety'].value_counts(ascending=False)
+# ascending, sort
 print(dog_variety)
 v = dog_variety.index.tolist()
 n = dog_variety.values.tolist()
 
 plt.pie(n)
 # plt.show()
+
+
+
+#https://blog.csdn.net/qq_18351157/article/details/105993752
+#https://stackoverflow.com/questions/35523635/extract-values-in-pandas-value-counts
