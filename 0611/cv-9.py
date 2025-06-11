@@ -17,7 +17,7 @@ while (v.isOpened()):
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-    key = cv2.waitKey(1000)
+    key = cv2.waitKey(10)
     # print(frame)
     faces = face_cascade.detectMultiScale(gray,
                                          scaleFactor=1.1,
@@ -35,9 +35,17 @@ while (v.isOpened()):
                     (0, 255, 0),
                     1)
 
+        margin = 50
+        y1 = max(0, y - margin)
+        y2 = min(frame.shape[0], y + h + margin)
+        x1 = max(0, x - margin)
+        x2 = min(frame.shape[1], x + w + margin)
+
+        face_img = frame[y1:y2, x1:x2]
+
 
         # 自動儲存臉部區域圖片
-        face_img = frame[y:y + h, x:x + w]
+        # face_img = frame[y:y + h, x:x + w]
         # 建立時間字串
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         # 建立檔名
