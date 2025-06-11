@@ -1,9 +1,15 @@
 import cv2
+import os
+from datetime import datetime
 
 # 取得攝影機
 v = cv2.VideoCapture(0)
 # 載入opencv人臉訓練模型
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+# 建立儲存資料夾
+save_dir = "faces"
+os.makedirs(save_dir, exist_ok=True)
 
 while (v.isOpened()):
     ret, frame = v.read()
@@ -17,9 +23,7 @@ while (v.isOpened()):
                                          scaleFactor=1.1,
                                          minNeighbors=5,
                                          minSize=(50, 50))
-
-
-
+    saved_count = 0
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
@@ -32,6 +36,13 @@ while (v.isOpened()):
                     1)
 
 
+        # 自動儲存臉部區域圖片
+        face_img = frame[y:y + h, x:x + w]
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = os.path.join(save_dir, f"face_{timestamp}_{saved_count}.jpg")
+        cv2.imwrite(filename, face_img)
+        print(f"儲存：{filename}")
+        saved_count += 1
 
     cv2.imshow('hey', frame)
 
