@@ -39,6 +39,12 @@ form.addRow(label2,input2)
 form.addRow(btn)
 form.addRow(resultLabel)
 
+def result():
+    s1 = input1.text()
+    currentText = resultLabel.text()
+    resultLabel.setText(f'{currentText}:{s1}')
+
+btn.clicked.connect(result)
 
 widget.show()
 sys.exit(app.exec())
