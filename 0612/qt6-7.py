@@ -42,8 +42,19 @@ form.addRow(resultLabel)
 form.addRow(resultInput)
 
 def result():
-    s1 = input1.text()
-    resultInput.setText(s1)
+    s = input2.currentText()
+    x = input1.text()
+    if s == 'oz':
+        final = float(x) * 29.573
+        final = round(final, 2)
+        final_text = f'您的換算結果為{x}oz約{final}cc'
+    else:
+        final = float(x) / 29.573
+        final = round(final, 2)
+        final_text = f'您的換算結果為{x}cc約{final}oz'
+
+    resultInput.setText(final_text)
+    input1.setText('')
 
 btn.clicked.connect(result)
 
