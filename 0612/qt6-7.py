@@ -15,6 +15,7 @@ label2.setText('請選擇換算單位:(oz/cc)')
 
 resultLabel = QtWidgets.QLabel(widget)
 resultLabel.setText('換算結果')
+resultInput = QtWidgets.QTextEdit(widget)
 
 input1 = QtWidgets.QLineEdit(widget)
 
@@ -38,11 +39,11 @@ form.addRow(label1,input1)
 form.addRow(label2,input2)
 form.addRow(btn)
 form.addRow(resultLabel)
+form.addRow(resultInput)
 
 def result():
     s1 = input1.text()
-    currentText = resultLabel.text()
-    resultLabel.setText(f'{currentText}:{s1}')
+    resultInput.setText(s1)
 
 btn.clicked.connect(result)
 
