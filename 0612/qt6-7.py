@@ -4,7 +4,7 @@ import sys
 app = QtWidgets.QApplication(sys.argv)
 
 widget = QtWidgets.QWidget()
-widget.resize(300,300)
+widget.resize(300,200)
 widget.setWindowTitle('盎司毫升轉換器')
 
 label1 = QtWidgets.QLabel(widget)
@@ -24,14 +24,20 @@ input2.addItems(['oz','cc'])
 btn = QtWidgets.QPushButton(widget)
 btn.setText('換算')
 
-grid = QtWidgets.QGridLayout(widget)
+# grid = QtWidgets.QGridLayout(widget)
+#
+# grid.addWidget(label1,1,1)
+# grid.addWidget(label2,2,1)
+# grid.addWidget(input1,1,2)
+# grid.addWidget(input2,2,2)
+# grid.addWidget(btn, 3,1, 1, 2)
+# grid.addWidget(resultLabel, 4, 1)
 
-grid.addWidget(label1,1,1)
-grid.addWidget(label2,2,1)
-grid.addWidget(input1,1,2)
-grid.addWidget(input2,2,2)
-grid.addWidget(btn, 3,1, 1, 2)
-grid.addWidget(resultLabel, 4, 1)
+form = QtWidgets.QFormLayout(widget)
+form.addRow(label1,input1)
+form.addRow(label2,input2)
+form.addRow(btn)
+form.addRow(resultLabel)
 
 
 widget.show()
